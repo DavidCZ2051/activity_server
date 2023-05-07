@@ -73,12 +73,7 @@ class Session:
         return None
 
     def get_total_player_count(self) -> int:
-        total_player_count: int = 0
-        for team in self.teams:
-            total_player_count += len(team.players)
-        total_player_count += len(self.unassigned_players)
-        total_player_count += len(self.players)
-        return total_player_count
+        return len(self.all_players())
 
     def all_players(self) -> list:
         all_players: list = []
